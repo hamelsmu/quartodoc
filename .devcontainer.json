@@ -1,0 +1,19 @@
+{
+  "name": "Quarto Dev Container",
+  "image": "ghcr.io/quarto-dev/quarto",
+  
+  "extensions": [
+    "quarto.quarto",
+    "ms-python.python"
+  ],
+
+  "postCreateCommand": "apt-get update && apt-get install -y python3 python3-pip && pip3 install jupyterlab pandas",
+
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+
+  "forwardPorts": [8888],  // Optional: Useful if you plan to run Jupyter inside the container
+
+  "remoteUser": "root"     // Optional: This might be needed if the image requires root for some commands.
+}
